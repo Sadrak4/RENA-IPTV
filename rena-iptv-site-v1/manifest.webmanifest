@@ -1,0 +1,9 @@
+{
+  "name":"RENA IPTV",
+  "short_name":"RENA IPTV",
+  "start_url":"/",
+  "display":"standalone",
+  "background_color":"#090604",
+  "theme_color":"#090604",
+  "icons":[]
+}
