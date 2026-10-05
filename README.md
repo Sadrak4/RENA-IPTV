@@ -1,19 +1,18 @@
-# RENA IPTV — V2.2
+# RENA IPTV — V2.1
 
-Atualização focada em apresentar melhor o conteúdo, reduzir repetições e melhorar a conversão no mobile e no desktop.
+Atualização visual mais limpa para GitHub + Vercel.
 
-## Novidades
+## Alterações principais
 
-- seção “O que você encontra” com TV ao vivo, filmes, séries, esportes, infantil e documentários;
-- bloco exclusivo para futebol e programação esportiva;
-- botão “Consultar programação” com mensagem pronta no WhatsApp;
-- planos mais claros e o plano de 3 meses destacado com economia de R$ 15;
-- teste de 12 horas mantido em uma seção própria;
-- fluxo “Como contratar” reduzido para 3 passos;
-- dispositivos reduzidos aos principais: Smart TV, TV Box, celular e computador;
-- FAQ mais comercial;
-- menos textos repetidos;
-- topo mantendo somente a logo/mascote, sem banner de venda.
+- removido o banner promocional grande do topo;
+- topo agora usa apenas a área da logo + mascote;
+- removida a seção repetitiva “Por que escolher”;
+- removidos os botões WhatsApp/Teste do cabeçalho;
+- navegação superior ficou mais limpa;
+- planos aparecem mais cedo na página;
+- mantido o teste de 12 horas em uma seção própria;
+- FAQ sem textos técnicos para clientes;
+- WhatsApp, renovação e suporte continuam disponíveis sem repetir demais.
 
 ## Rodar localmente
 
@@ -21,16 +20,21 @@ Atualização focada em apresentar melhor o conteúdo, reduzir repetições e me
 npm run dev
 ```
 
+Abra `http://localhost:5173`.
+
 ## Build
 
 ```bash
 npm run build
 ```
 
-## WhatsApp
+A pasta final será `dist/`.
 
-Número configurado:
 
-```text
-(11) 96457-2959
-```
+## V2.3
+
+- Carrossel automático de entretenimento com: Netflix, Disney+, HBO Max, Prime Video, Globoplay, Paramount+ e Apple TV+.
+- Carrossel automático de esportes com: CazéTV, Premiere, BandSports, TNT Sports, ESPN e SporTV.
+- Carrosséis pausam ao passar o mouse e respeitam `prefers-reduced-motion`.
+- Botão para consultar programação pelo WhatsApp.
+- Os cards usam wordmarks em texto e estilos próprios, sem depender de imagens externas.

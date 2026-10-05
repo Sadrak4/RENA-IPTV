@@ -921,3 +921,150 @@ main { padding-bottom: 120px; }
   .sports-highlight { width: min(calc(100% - 24px), var(--container)); }
   .stadium-icon { font-size: 3.6rem; }
 }
+
+
+/* Carrosséis automáticos de marcas */
+.brand-carousel-block {
+  margin-top: 32px;
+  border-radius: 26px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.018));
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.brand-carousel-block + .brand-carousel-block {
+  margin-top: 18px;
+}
+.carousel-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px 12px;
+}
+.carousel-label span {
+  color: var(--gold);
+  letter-spacing: .12em;
+  font-size: .78rem;
+  font-weight: 800;
+}
+.carousel-label small {
+  color: var(--muted);
+}
+.logo-marquee {
+  position: relative;
+  overflow: hidden;
+  padding: 16px 0 22px;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+}
+.logo-track {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  animation: rena-marquee 28s linear infinite;
+  padding-inline: 16px;
+}
+.logo-marquee.reverse .logo-track {
+  animation-direction: reverse;
+  animation-duration: 24s;
+}
+.logo-marquee:hover .logo-track {
+  animation-play-state: paused;
+}
+.brand-logo {
+  min-width: 190px;
+  height: 92px;
+  display: grid;
+  place-items: center;
+  padding: 0 24px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.09);
+  background: #0b0b0d;
+  color: #fff;
+  font-size: 1.45rem;
+  font-weight: 900;
+  letter-spacing: -.02em;
+  white-space: nowrap;
+  box-shadow: 0 14px 34px rgba(0,0,0,.28);
+}
+.brand-logo.netflix { color: #e50914; letter-spacing: -.04em; }
+.brand-logo.disney { color: #dce8ff; background: linear-gradient(135deg,#071a58,#092d82); font-style: italic; }
+.brand-logo.max { color: #fff; background: linear-gradient(135deg,#5b20d6,#2f0a76); }
+.brand-logo.prime { color: #58b9ff; background: linear-gradient(135deg,#071824,#0b2436); }
+.brand-logo.globoplay { color: #fff; background: linear-gradient(135deg,#ff2738,#ff7b00 45%,#9346ff); }
+.brand-logo.paramount { color: #fff; background: linear-gradient(135deg,#0056d9,#0a2c72); }
+.brand-logo.apple { color: #fff; background: linear-gradient(135deg,#0b0b0d,#222); }
+
+.brand-logo.cazetv { color: #75ff76; background: linear-gradient(135deg,#103113,#0b1b0d); }
+.brand-logo.premiere { color: #ffd052; background: linear-gradient(135deg,#13231b,#1d3327); }
+.brand-logo.bandsports { color: #fff; background: linear-gradient(135deg,#c91021,#6e0710); }
+.brand-logo.tnt { color: #fff; background: linear-gradient(135deg,#6d29e8,#2e0c73); }
+.brand-logo.espn { color: #f4182c; background: #fff; }
+.brand-logo.sportv { color: #fff; background: linear-gradient(135deg,#00a455,#0070bd 55%,#e12a2a); }
+
+.carousel-note {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.07);
+  background: rgba(255,255,255,.025);
+}
+.carousel-note p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 780px;
+  font-size: .92rem;
+}
+
+@keyframes rena-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 8px)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-track {
+    animation: none;
+  }
+  .logo-marquee {
+    overflow-x: auto;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .carousel-label {
+    padding: 16px 16px 8px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .brand-logo {
+    min-width: 155px;
+    height: 76px;
+    font-size: 1.15rem;
+    padding: 0 18px;
+    border-radius: 16px;
+  }
+  .logo-track {
+    gap: 12px;
+    animation-duration: 22s;
+  }
+  .logo-marquee.reverse .logo-track {
+    animation-duration: 20s;
+  }
+  .carousel-note {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .carousel-note .btn {
+    width: 100%;
+  }
+}
