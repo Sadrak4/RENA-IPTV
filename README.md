@@ -1,36 +1,97 @@
-# RENA IPTV — V1 sem banco de dados
+# RENA IPTV — V2.1
 
-Site estático, responsivo e sem dependências externas. Feito para subir no GitHub e publicar no Vercel.
+Atualização visual mais limpa para GitHub + Vercel.
 
-## Rodar no PC
+## Alterações principais
+
+- removido o banner promocional grande do topo;
+- topo agora usa apenas a área da logo + mascote;
+- removida a seção repetitiva “Por que escolher”;
+- removidos os botões WhatsApp/Teste do cabeçalho;
+- navegação superior ficou mais limpa;
+- planos aparecem mais cedo na página;
+- mantido o teste de 12 horas em uma seção própria;
+- FAQ sem textos técnicos para clientes;
+- WhatsApp, renovação e suporte continuam disponíveis sem repetir demais.
+
+## Rodar localmente
 
 ```bash
 npm run dev
 ```
 
-Abra: `http://localhost:5173`
+Abra `http://localhost:5173`.
 
-## Gerar a pasta final
+## Build
 
 ```bash
 npm run build
 ```
 
-Isso gera a pasta `dist/`.
+A pasta final será `dist/`.
 
-## Vercel
 
-Você pode publicar o repositório diretamente. Se preferir build:
-- Build Command: `npm run build`
-- Output Directory: `dist`
+## V2.3
 
-## Onde alterar
+- Carrossel automático de entretenimento com: Netflix, Disney+, HBO Max, Prime Video, Globoplay, Paramount+ e Apple TV+.
+- Carrossel automático de esportes com: CazéTV, Premiere, BandSports, TNT Sports, ESPN e SporTV.
+- Carrosséis pausam ao passar o mouse e respeitam `prefers-reduced-motion`.
+- Botão para consultar programação pelo WhatsApp.
+- Os cards usam wordmarks em texto e estilos próprios, sem depender de imagens externas.
 
-- WhatsApp: `src/app.js`
-- Planos: `index.html` e `src/app.js`
-- Logo/mascote do topo: `public/rena-brand.jpg`
-- Visual: `src/styles.css`
 
-## Banco de dados
+## V2.4
 
-Nenhum banco é usado. A última seleção de plano fica apenas no `localStorage` do navegador.
+- Removido o bloco informativo abaixo dos carrosséis.
+- “Rolagem automática” trocado por “STREAMINGS”.
+- Botões com salto suave, clique com ripple e pulso discreto.
+- Cards com elevação no hover.
+- Logo/mascote com entrada suave.
+- Seções aparecem suavemente conforme a rolagem.
+- Efeitos respeitam a preferência de movimento reduzido do dispositivo.
+
+## V2.5 — telas adicionais
+
+- Cada plano inclui 1 tela.
+- O cliente pode escolher de 1 a 5 telas no total.
+- Cada tela adicional custa R$ 5 por mês.
+- No plano mensal, cada tela extra soma R$ 5 ao total.
+- No plano trimestral, cada tela extra soma R$ 15 ao total (R$ 5 × 3 meses).
+- O valor é atualizado automaticamente no card.
+- A mensagem do WhatsApp informa o plano, a quantidade de telas e o valor total.
+
+## V2.6
+- Destaque para **mais de 100 mil conteúdos** no site.
+- Nova seção de compatibilidade inspirada em painéis de dispositivos.
+- Compatibilidade exibida para Samsung, LG, Roku, Android TV, Fire TV, Apple TV, TV Box, MAG Box, Windows, iOS e Android.
+- Cards responsivos e interativos para desktop e celular.
+
+
+## V2.7 — Mobile
+
+- layout mobile refeito para 360px, 390px, 412px e 430px;
+- cabeçalho compacto e menu mobile com área maior para toque;
+- hero com logo/mascote inteira e CTAs em largura total;
+- planos mais legíveis e seletor de telas otimizado para toque;
+- carrosséis compactos com pausa ao tocar e suporte a rolagem horizontal;
+- compatibilidade em grade responsiva;
+- fluxo mobile reorganizado;
+- FAQ e cards mais confortáveis no celular;
+- barra inferior respeita safe-area em iPhones;
+- menos animação de hover em dispositivos touch;
+- correções para evitar rolagem horizontal.
+
+## V2.8 — carregamento inicial
+
+Esta versão mantém o visual e as funções da V2.7, mas prioriza o tempo até a primeira tela aparecer no celular.
+
+- logo/mascote convertida para WebP (~30 KB) com JPEG de fallback;
+- preload e `fetchpriority="high"` para a imagem principal;
+- CSS crítico do topo embutido no HTML para mostrar a primeira tela antes do CSS completo;
+- CSS completo carregado sem bloquear a primeira pintura;
+- a Hero não depende mais da animação de reveal para aparecer;
+- carrosséis só começam a animar perto da viewport;
+- seções inferiores usam `content-visibility: auto`;
+- efeitos não essenciais são iniciados em tempo ocioso;
+- cache longo apenas para o arquivo WebP versionado;
+- redução de `backdrop-filter` pesado no cabeçalho mobile.

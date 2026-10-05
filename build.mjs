@@ -1,12 +1,21 @@
-import fs from 'node:fs'
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
+import { cpSync, existsSync, mkdirSync, rmSync, copyFileSync } from 'node:fs';
+import { join } from 'node:path';
 
-const root = path.dirname(fileURLToPath(import.meta.url))
-const dist = path.join(root, 'dist')
-fs.rmSync(dist, { recursive:true, force:true })
-fs.mkdirSync(dist, { recursive:true })
-for (const name of ['index.html', 'src', 'public']) {
-  fs.cpSync(path.join(root, name), path.join(dist, name === 'public' ? '.' : name), { recursive:true })
-}
-console.log('Build concluído em dist/')
+const root = process.cwd();
+const dist = join(root, 'dist');
+
+if (existsSync(dist)) rmSync(dist, { recursive: true, force: true });
+mkdirSync(dist, { recursive: true });
+
+const copyTarget = (source, targetName = source) => {
+  const from = join(root, source);
+  const to = join(dist, targetName);
+  cpSync(from, to, { recursive: true });
+};
+
+copyFileSync(join(root, 'index.html'), join(dist, 'index.html'));
+copyFileSync(join(root, 'manifest.webmanifest'), join(dist, 'manifest.webmanifest'));
+copyTarget('public');
+copyTarget('src');
+
+console.log('Build concluído em dist/.');
