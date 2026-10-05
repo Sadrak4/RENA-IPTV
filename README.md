@@ -65,3 +65,18 @@ A pasta final será `dist/`.
 - Nova seção de compatibilidade inspirada em painéis de dispositivos.
 - Compatibilidade exibida para Samsung, LG, Roku, Android TV, Fire TV, Apple TV, TV Box, MAG Box, Windows, iOS e Android.
 - Cards responsivos e interativos para desktop e celular.
+
+
+## V2.7 — Mobile
+
+- layout mobile refeito para 360px, 390px, 412px e 430px;
+- cabeçalho compacto e menu mobile com área maior para toque;
+- hero com logo/mascote inteira e CTAs em largura total;
+- planos mais legíveis e seletor de telas otimizado para toque;
+- carrosséis compactos com pausa ao tocar e suporte a rolagem horizontal;
+- compatibilidade em grade responsiva;
+- fluxo mobile reorganizado;
+- FAQ e cards mais confortáveis no celular;
+- barra inferior respeita safe-area em iPhones;
+- menos animação de hover em dispositivos touch;
+- correções para evitar rolagem horizontal.

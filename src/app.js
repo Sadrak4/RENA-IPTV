@@ -147,11 +147,42 @@ const bindWhatsAppLinks = () => {
 };
 
 if (menuBtn && nav) {
-  menuBtn.addEventListener('click', () => nav.classList.toggle('open'));
+  const setMenuState = (open) => {
+    nav.classList.toggle('open', open);
+    document.body.classList.toggle('nav-open', open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.textContent = open ? '✕' : '☰';
+  };
+
+  menuBtn.setAttribute('aria-expanded', 'false');
+  menuBtn.addEventListener('click', () => setMenuState(!nav.classList.contains('open')));
+
   nav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => nav.classList.remove('open'));
+    link.addEventListener('click', () => setMenuState(false));
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setMenuState(false);
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!nav.classList.contains('open')) return;
+    if (nav.contains(event.target) || menuBtn.contains(event.target)) return;
+    setMenuState(false);
   });
 }
+
+// No celular, tocar no carrossel pausa a animação para facilitar o arraste horizontal.
+document.querySelectorAll('.logo-marquee').forEach((marquee) => {
+  const pause = () => marquee.classList.add('touching');
+  const resume = () => {
+    window.setTimeout(() => marquee.classList.remove('touching'), 700);
+  };
+
+  marquee.addEventListener('touchstart', pause, { passive: true });
+  marquee.addEventListener('touchend', resume, { passive: true });
+  marquee.addEventListener('touchcancel', resume, { passive: true });
+});
 
 initScreenPickers();
 bindWhatsAppLinks();
