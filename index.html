@@ -88,10 +88,30 @@
           <p class="plan-copy">Uma opção simples para começar.</p>
           <div class="plan-price"><small>R$</small>25<sup>,00</sup></div>
           <ul class="plan-list">
-            <li>Atendimento via WhatsApp</li>
-            <li>Orientação de configuração</li>
-            <li>Compatibilidade com vários dispositivos</li>
+            <li>1 tela inclusa no plano</li>
+            <li>Adicione até 4 telas extras</li>
+            <li>R$ 5 por mês por tela adicional</li>
           </ul>
+
+          <div class="screen-picker" data-screen-picker="mensal" data-base-price="25" data-months="1">
+            <div class="screen-picker-head">
+              <span>Quantas telas deseja?</span>
+              <strong><span data-screen-count>1</span> tela</strong>
+            </div>
+            <div class="screen-options" role="group" aria-label="Quantidade de telas do plano mensal">
+              <button type="button" class="screen-option active" data-screens="1">1</button>
+              <button type="button" class="screen-option" data-screens="2">2</button>
+              <button type="button" class="screen-option" data-screens="3">3</button>
+              <button type="button" class="screen-option" data-screens="4">4</button>
+              <button type="button" class="screen-option" data-screens="5">5</button>
+            </div>
+            <p class="screen-note">1 tela inclusa • cada tela adicional soma R$ 5 no mês.</p>
+            <div class="screen-total">
+              <span>Total do plano</span>
+              <strong data-plan-total>R$ 25,00</strong>
+            </div>
+          </div>
+
           <button class="btn btn-primary full" data-plan="mensal">Assinar agora</button>
         </article>
 
@@ -105,10 +125,30 @@
           <div class="plan-price"><small>R$</small>60<sup>,00</sup></div>
           <div class="plan-saving">Economize R$ 15 em relação a três mensalidades.</div>
           <ul class="plan-list">
-            <li>Atendimento via WhatsApp</li>
-            <li>Orientação de configuração</li>
-            <li>Melhor opção para quem quer mais tempo</li>
+            <li>1 tela inclusa no plano</li>
+            <li>Adicione até 4 telas extras</li>
+            <li>R$ 5/mês por tela adicional × 3 meses</li>
           </ul>
+
+          <div class="screen-picker" data-screen-picker="trimestral" data-base-price="60" data-months="3">
+            <div class="screen-picker-head">
+              <span>Quantas telas deseja?</span>
+              <strong><span data-screen-count>1</span> tela</strong>
+            </div>
+            <div class="screen-options" role="group" aria-label="Quantidade de telas do plano trimestral">
+              <button type="button" class="screen-option active" data-screens="1">1</button>
+              <button type="button" class="screen-option" data-screens="2">2</button>
+              <button type="button" class="screen-option" data-screens="3">3</button>
+              <button type="button" class="screen-option" data-screens="4">4</button>
+              <button type="button" class="screen-option" data-screens="5">5</button>
+            </div>
+            <p class="screen-note">No trimestral, cada tela adicional soma R$ 15 ao total (R$ 5 × 3 meses).</p>
+            <div class="screen-total">
+              <span>Total do plano</span>
+              <strong data-plan-total>R$ 60,00</strong>
+            </div>
+          </div>
+
           <button class="btn btn-primary full" data-plan="trimestral">Quero este plano</button>
         </article>
       </div>
@@ -234,6 +274,10 @@
         <details>
           <summary>Em quais aparelhos posso usar?</summary>
           <p>Você pode consultar compatibilidade para Smart TV, TV Box, celular e computador. Em caso de dúvida, chame no WhatsApp.</p>
+        </details>
+        <details>
+          <summary>Posso adicionar mais telas ao plano?</summary>
+          <p>Sim. O plano inclui 1 tela e você pode escolher até 5 telas no total. Cada tela adicional custa R$ 5 por mês. No plano trimestral, o adicional é calculado por 3 meses.</p>
         </details>
         <details>
           <summary>Como funciona a renovação?</summary>

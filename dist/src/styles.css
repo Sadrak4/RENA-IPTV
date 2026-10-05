@@ -1171,3 +1171,81 @@ body.reveal-ready .reveal-item.is-visible {
     transform: none;
   }
 }
+
+/* V2.5 — seletor de telas */
+.screen-picker {
+  margin: 4px 0 22px;
+  padding: 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 191, 69, 0.18);
+  background: linear-gradient(180deg, rgba(255, 191, 69, 0.06), rgba(255,255,255,0.025));
+}
+.screen-picker-head,
+.screen-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.screen-picker-head span,
+.screen-total span {
+  color: var(--muted);
+  font-size: .94rem;
+}
+.screen-picker-head strong {
+  color: var(--gold);
+  font-size: .98rem;
+}
+.screen-options {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-top: 14px;
+}
+.screen-option {
+  min-height: 44px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 12px;
+  background: rgba(255,255,255,.035);
+  color: var(--text);
+  font-weight: 800;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease, color .18s ease, box-shadow .18s ease;
+}
+.screen-option:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,191,69,.4);
+}
+.screen-option.active {
+  background: linear-gradient(135deg, var(--gold), var(--gold-2));
+  color: #140d08;
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(255,160,44,.18);
+}
+.screen-note {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: .84rem;
+  line-height: 1.5;
+}
+.screen-total {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.screen-total strong {
+  color: var(--white);
+  font-size: 1.2rem;
+}
+.screen-total strong.price-flash {
+  animation: priceFlash .32s ease;
+}
+@keyframes priceFlash {
+  0% { transform: scale(.96); opacity: .6; }
+  60% { transform: scale(1.06); color: var(--gold); }
+  100% { transform: scale(1); opacity: 1; }
+}
+@media (max-width: 420px) {
+  .screen-picker { padding: 15px; }
+  .screen-options { gap: 6px; }
+  .screen-option { min-height: 42px; padding: 0; }
+}

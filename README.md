@@ -49,3 +49,13 @@ A pasta final será `dist/`.
 - Logo/mascote com entrada suave.
 - Seções aparecem suavemente conforme a rolagem.
 - Efeitos respeitam a preferência de movimento reduzido do dispositivo.
+
+## V2.5 — telas adicionais
+
+- Cada plano inclui 1 tela.
+- O cliente pode escolher de 1 a 5 telas no total.
+- Cada tela adicional custa R$ 5 por mês.
+- No plano mensal, cada tela extra soma R$ 5 ao total.
+- No plano trimestral, cada tela extra soma R$ 15 ao total (R$ 5 × 3 meses).
+- O valor é atualizado automaticamente no card.
+- A mensagem do WhatsApp informa o plano, a quantidade de telas e o valor total.
