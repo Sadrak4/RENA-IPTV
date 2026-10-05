@@ -7,18 +7,9 @@
   <meta name="description" content="RENA IPTV — mais de 100 mil conteúdos, planos, teste de 12 horas, compatibilidade e atendimento direto pelo WhatsApp." />
   <meta property="og:title" content="RENA IPTV" />
   <meta property="og:description" content="Mais de 100 mil conteúdos, planos, teste de 12 horas e atendimento rápido pelo WhatsApp." />
-  <meta property="og:image" content="/public/rena-logo-mascote-v28.webp" />
+  <meta property="og:image" content="/public/rena-logo-mascote.jpg" />
   <link rel="manifest" href="/manifest.webmanifest" />
-  <link rel="preload" href="/public/rena-logo-mascote-v28.webp" as="image" type="image/webp" fetchpriority="high" />
-  <style>
-    :root{--bg:#090604;--text:#f9f5ef;--muted:#c9b9aa;--gold:#ffbf45;--gold-2:#ff9e2c;--container:1180px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth;background:#090604}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:linear-gradient(180deg,#0a0705,#090604);color:var(--text);overflow-x:hidden}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}.container{width:min(calc(100% - 32px),var(--container));margin-inline:auto}.topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:24px;width:min(calc(100% - 24px),calc(var(--container) + 8px));margin:12px auto 0;padding:16px 18px;border:1px solid rgba(255,255,255,.08);border-radius:18px;background:rgba(9,6,4,.9)}.brand{display:flex;flex-direction:column;gap:4px}.brand-mark{font-size:1.35rem;font-weight:800;letter-spacing:.04em}.brand-mark b{color:var(--gold)}.brand small{color:var(--muted);font-size:.82rem}.nav{display:flex;align-items:center;gap:18px}.nav a{color:var(--muted);font-size:.97rem}.menu{display:none;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:10px 12px}.hero{display:grid;grid-template-columns:1.02fr .98fr;gap:30px;padding-top:42px;align-items:center}.hero-copy{padding:16px 0}.eyebrow{display:inline-block;margin-bottom:14px;color:var(--gold);letter-spacing:.16em;font-size:.79rem;font-weight:800}.hero h1{margin:0;font-size:clamp(2.2rem,4vw,4.4rem);line-height:1.02}.hero p{margin:18px 0 0;max-width:650px;color:var(--muted);font-size:1.05rem;line-height:1.7}.hero-brand-card{width:min(100%,560px);margin-inline:auto;padding:12px;border-radius:30px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.025);overflow:hidden}.hero-brand-card img{width:100%;height:auto;object-fit:contain;border-radius:22px}.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:15px 24px;border:1px solid transparent;font-weight:700}.btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#140d08}.btn-outline{background:rgba(255,255,255,.03);border-color:rgba(255,191,69,.24);color:#fff}.hero-highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}.hero-highlights article{padding:18px 16px;border-radius:18px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03)}.hero-highlights strong{display:block;font-size:1.38rem;margin-bottom:6px}.hero-highlights span{color:var(--muted);font-size:.92rem;line-height:1.45}
-    @media(max-width:1080px){.hero{grid-template-columns:1fr}.hero-brand-card{order:-1}}
-    @media(max-width:860px){.nav{display:none}.menu{display:inline-flex}.hero-highlights{grid-template-columns:1fr}}
-    @media(max-width:640px){.container{width:calc(100% - 24px)}.topbar{margin-top:8px;padding:12px 13px}.brand-mark{font-size:1.05rem}.brand small{font-size:.72rem}.hero{padding-top:18px;gap:16px}.hero h1{font-size:1.95rem}.hero p{font-size:.96rem;line-height:1.58}.hero-brand-card{padding:7px;border-radius:20px}.hero-brand-card img{border-radius:14px}.hero-cta{display:grid;grid-template-columns:1fr;gap:9px;margin-top:20px}.hero-cta .btn{width:100%;min-height:50px}.hero-highlights{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:18px}.hero-highlights article{padding:11px 7px;text-align:center}.hero-highlights strong{font-size:1rem}.hero-highlights span{font-size:.67rem}}
-  </style>
-  <link rel="preload" href="/src/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="/src/styles.css" /></noscript>
+  <link rel="stylesheet" href="/src/styles.css" />
   <title>RENA IPTV</title>
 </head>
 <body>
@@ -46,7 +37,7 @@
   </header>
 
   <main>
-    <section class="hero container" id="inicio">
+    <section class="hero container reveal-item" id="inicio">
       <div class="hero-copy">
         <span class="eyebrow">RENA IPTV</span>
         <h1>Entretenimento em um só lugar, com atendimento direto e simples.</h1>
@@ -78,10 +69,7 @@
       </div>
 
       <div class="hero-brand-card" aria-label="Logo e mascote RENA IPTV">
-        <picture>
-          <source srcset="/public/rena-logo-mascote-v28.webp" type="image/webp" />
-          <img src="/public/rena-logo-mascote.jpg" alt="Logo e mascote RENA IPTV" width="785" height="405" loading="eager" fetchpriority="high" decoding="async" />
-        </picture>
+        <img src="/public/rena-logo-mascote.jpg" alt="Logo e mascote RENA IPTV" />
       </div>
     </section>
 
@@ -369,6 +357,6 @@
     <a class="mobile-cta-btn secondary" data-whatsapp="teste" target="_blank" rel="noreferrer">Teste 12h</a>
   </div>
 
-  <script src="/src/app.js" defer></script>
+  <script src="/src/app.js"></script>
 </body>
 </html>

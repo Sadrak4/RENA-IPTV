@@ -194,72 +194,45 @@ try {
   setFinalCta('duvida');
 }
 
+console.log(`Atendimento WhatsApp: ${PHONE_RAW}`);
 
-// Interações visuais carregadas de forma não bloqueante na V2.8
+// Interações visuais da V2.4+
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const initDeferredVisuals = () => {
-  document.body.classList.add('reveal-ready');
+document.body.classList.add('reveal-ready');
 
-  const revealItems = document.querySelectorAll('.reveal-item');
-  if (!reduceMotion && 'IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.06, rootMargin: '0px 0px 160px 0px' });
-
-    revealItems.forEach((item) => observer.observe(item));
-  } else {
-    revealItems.forEach((item) => item.classList.add('is-visible'));
-  }
-
-  const primaryButtons = document.querySelectorAll('.btn-primary');
-  primaryButtons.forEach((button, index) => {
-    if (index < 2) button.classList.add('attention-pulse');
-  });
-
-  const rippleTargets = document.querySelectorAll('.btn, .mini-btn, .mobile-cta-btn, .screen-option');
-  rippleTargets.forEach((target) => {
-    target.addEventListener('pointerdown', (event) => {
-      if (reduceMotion) return;
-      const rect = target.getBoundingClientRect();
-      const dot = document.createElement('span');
-      dot.className = 'ripple-dot';
-      dot.style.left = `${event.clientX - rect.left}px`;
-      dot.style.top = `${event.clientY - rect.top}px`;
-      dot.style.width = dot.style.height = '18px';
-      target.appendChild(dot);
-      setTimeout(() => dot.remove(), 600);
+const revealItems = document.querySelectorAll('.reveal-item');
+if (!reduceMotion && 'IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
     });
-  });
-};
+  }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
 
-// Só liga os carrosséis quando eles realmente entram ou se aproximam da tela.
-const initMarqueeVisibility = () => {
-  const marquees = document.querySelectorAll('.logo-marquee');
-  if (!marquees.length) return;
-
-  if ('IntersectionObserver' in window && !reduceMotion) {
-    const marqueeObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        entry.target.classList.toggle('marquee-active', entry.isIntersecting);
-      });
-    }, { rootMargin: '240px 0px 240px 0px', threshold: 0.01 });
-
-    marquees.forEach((marquee) => marqueeObserver.observe(marquee));
-  } else if (!reduceMotion) {
-    marquees.forEach((marquee) => marquee.classList.add('marquee-active'));
-  }
-};
-
-initMarqueeVisibility();
-
-if ('requestIdleCallback' in window) {
-  requestIdleCallback(initDeferredVisuals, { timeout: 1200 });
+  revealItems.forEach((item) => observer.observe(item));
 } else {
-  setTimeout(initDeferredVisuals, 120);
+  revealItems.forEach((item) => item.classList.add('is-visible'));
 }
+
+const primaryButtons = document.querySelectorAll('.btn-primary');
+primaryButtons.forEach((button, index) => {
+  if (index < 2) button.classList.add('attention-pulse');
+});
+
+const rippleTargets = document.querySelectorAll('.btn, .mini-btn, .mobile-cta-btn, .screen-option');
+rippleTargets.forEach((target) => {
+  target.addEventListener('pointerdown', (event) => {
+    if (reduceMotion) return;
+    const rect = target.getBoundingClientRect();
+    const dot = document.createElement('span');
+    dot.className = 'ripple-dot';
+    dot.style.left = `${event.clientX - rect.left}px`;
+    dot.style.top = `${event.clientY - rect.top}px`;
+    dot.style.width = dot.style.height = '18px';
+    target.appendChild(dot);
+    setTimeout(() => dot.remove(), 600);
+  });
+});
