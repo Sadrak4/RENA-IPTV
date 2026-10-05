@@ -57,7 +57,7 @@ button { font: inherit; cursor: pointer; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 24px;
   width: min(calc(100% - 24px), calc(var(--container) + 8px));
   margin: 12px auto 0;
   padding: 16px 18px;
@@ -235,24 +235,26 @@ main { padding-bottom: 120px; }
   line-height: 1.45;
 }
 
-.hero-media {
-  display: flex;
-  justify-content: center;
+.hero-highlights.compact article {
+  min-height: 104px;
 }
-.hero-poster-card {
+
+.hero-brand-card {
   width: min(100%, 560px);
-  padding: 14px;
-  border-radius: 32px;
-  border: 1px solid rgba(255,255,255,0.09);
-  background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02));
+  margin-inline: auto;
+  padding: 12px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.015));
   box-shadow: var(--shadow);
+  overflow: hidden;
 }
-.hero-poster-card img {
+.hero-brand-card img {
   width: 100%;
   height: auto;
   object-fit: contain;
-  object-position: center top;
-  border-radius: 24px;
+  object-position: center;
+  border-radius: 22px;
 }
 
 .section {
@@ -637,7 +639,7 @@ main { padding-bottom: 120px; }
   .hero {
     grid-template-columns: 1fr;
   }
-  .hero-media { order: -1; }
+  .hero-brand-card { order: -1; }
   .feature-grid,
   .steps-grid { grid-template-columns: repeat(2, 1fr); }
   .devices-grid { grid-template-columns: repeat(3, 1fr); }
@@ -714,4 +716,24 @@ main { padding-bottom: 120px; }
   .float-wa { display: none; }
   .mobile-sticky-cta { display: flex; }
   .footer { padding-bottom: 106px; }
+}
+
+
+/* V2.1 cleanup */
+.test-card.simplified {
+  align-items: center;
+}
+.compact-final {
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .topbar { gap: 12px; }
+  .nav { max-height: 70vh; overflow-y: auto; }
+}
+
+@media (max-width: 640px) {
+  .hero-brand-card { padding: 8px; border-radius: 22px; }
+  .hero-brand-card img { border-radius: 16px; }
+  .hero-highlights.compact article { min-height: 0; }
 }

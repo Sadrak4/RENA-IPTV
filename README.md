@@ -1,16 +1,18 @@
-# RENA IPTV — V2
+# RENA IPTV — V2.1
 
-Versão 2 do site estático, pronta para GitHub + Vercel.
+Atualização visual mais limpa para GitHub + Vercel.
 
-## Melhorias da V2
+## Alterações principais
 
-- visual mais premium e mais limpo;
-- botão e seção para **solicitar teste de 12 horas**;
+- removido o banner promocional grande do topo;
+- topo agora usa apenas a área da logo + mascote;
+- removida a seção repetitiva “Por que escolher”;
+- removidos os botões WhatsApp/Teste do cabeçalho;
+- navegação superior ficou mais limpa;
+- planos aparecem mais cedo na página;
+- mantido o teste de 12 horas em uma seção própria;
 - FAQ sem textos técnicos para clientes;
-- seção de renovação e suporte mais claras;
-- hero com imagem em **contain**, evitando corte visível da arte;
-- barra fixa no mobile para WhatsApp e teste;
-- mensagens prontas diferentes para plano mensal, trimestral, teste, renovação e dúvidas.
+- WhatsApp, renovação e suporte continuam disponíveis sem repetir demais.
 
 ## Rodar localmente
 
@@ -18,11 +20,7 @@ Versão 2 do site estático, pronta para GitHub + Vercel.
 npm run dev
 ```
 
-Abra:
-
-```text
-http://localhost:5173
-```
+Abra `http://localhost:5173`.
 
 ## Build
 
@@ -30,24 +28,4 @@ http://localhost:5173
 npm run build
 ```
 
-A pasta final será:
-
-```text
-dist/
-```
-
-## Arquivos principais
-
-- `index.html` — estrutura do site
-- `src/styles.css` — visual
-- `src/app.js` — links do WhatsApp e interações
-- `public/hero-poster.jpg` — arte usada no topo
-- `public/rena-brand.jpg` — imagem de apoio
-
-## WhatsApp
-
-Número atual configurado:
-
-```text
-(11) 96457-2959
-```
+A pasta final será `dist/`.
