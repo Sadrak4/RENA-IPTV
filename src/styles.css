@@ -1004,24 +1004,6 @@ main { padding-bottom: 120px; }
 .brand-logo.espn { color: #f4182c; background: #fff; }
 .brand-logo.sportv { color: #fff; background: linear-gradient(135deg,#00a455,#0070bd 55%,#e12a2a); }
 
-.carousel-note {
-  margin-top: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  padding: 18px 20px;
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,.07);
-  background: rgba(255,255,255,.025);
-}
-.carousel-note p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.6;
-  max-width: 780px;
-  font-size: .92rem;
-}
 
 @keyframes rena-marquee {
   from { transform: translateX(0); }
@@ -1060,11 +1042,132 @@ main { padding-bottom: 120px; }
   .logo-marquee.reverse .logo-track {
     animation-duration: 20s;
   }
-  .carousel-note {
-    align-items: stretch;
-    flex-direction: column;
+}
+
+
+/* Interações V2.4 */
+.btn,
+.mini-btn,
+.mobile-cta-btn {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  will-change: transform, box-shadow;
+}
+
+.btn:hover,
+.mini-btn:hover,
+.mobile-cta-btn:hover {
+  transform: translateY(-4px) scale(1.025);
+  box-shadow: 0 16px 34px rgba(255, 172, 48, 0.18);
+}
+
+.btn:active,
+.mini-btn:active,
+.mobile-cta-btn:active {
+  transform: translateY(0) scale(.97);
+}
+
+.btn-primary.attention-pulse {
+  animation: rena-button-pulse 5.5s ease-in-out infinite;
+}
+
+.interactive-card {
+  transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease, background .28s ease;
+  will-change: transform;
+}
+
+.interactive-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(255, 191, 69, .28);
+  box-shadow: 0 28px 58px rgba(0,0,0,.42), 0 0 28px rgba(255, 175, 44, .07);
+}
+
+.plan-card.featured:hover {
+  border-color: rgba(255, 191, 69, .56);
+  box-shadow: 0 30px 65px rgba(0,0,0,.46), 0 0 36px rgba(255, 174, 43, .14), inset 0 0 0 1px rgba(255,191,69,.12);
+}
+
+.device-item:hover div {
+  animation: rena-icon-bounce .48s ease;
+}
+
+.hero-brand-card {
+  animation: rena-logo-enter .72s cubic-bezier(.2,.78,.3,1) both;
+}
+
+.brand-logo {
+  transition: transform .22s ease, filter .22s ease;
+}
+
+.brand-logo:hover {
+  transform: translateY(-4px) scale(1.035);
+  filter: brightness(1.1);
+}
+
+.logo-marquee:hover .logo-track {
+  animation-play-state: paused;
+}
+
+body.reveal-ready .reveal-item {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .62s ease, transform .62s cubic-bezier(.2,.72,.28,1);
+}
+
+body.reveal-ready .reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ripple-dot {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  background: rgba(255,255,255,.33);
+  transform: translate(-50%, -50%) scale(0);
+  animation: rena-ripple .55s ease-out forwards;
+}
+
+@keyframes rena-button-pulse {
+  0%, 82%, 100% { transform: translateY(0) scale(1); box-shadow: 0 16px 38px rgba(255,160,44,.18); }
+  88% { transform: translateY(-3px) scale(1.025); box-shadow: 0 18px 46px rgba(255,160,44,.28); }
+  94% { transform: translateY(0) scale(1); }
+}
+
+@keyframes rena-icon-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  45% { transform: translateY(-8px) scale(1.08); }
+  72% { transform: translateY(-2px) scale(1.02); }
+}
+
+@keyframes rena-logo-enter {
+  from { opacity: 0; transform: translateY(16px) scale(.975); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes rena-ripple {
+  to { transform: translate(-50%, -50%) scale(12); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary.attention-pulse,
+  .hero-brand-card,
+  .device-item:hover div,
+  .ripple-dot {
+    animation: none !important;
   }
-  .carousel-note .btn {
-    width: 100%;
+  body.reveal-ready .reveal-item,
+  body.reveal-ready .reveal-item.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .interactive-card:hover,
+  .btn:hover,
+  .mini-btn:hover,
+  .mobile-cta-btn:hover,
+  .brand-logo:hover {
+    transform: none;
   }
 }

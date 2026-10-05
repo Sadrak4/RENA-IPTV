@@ -38,3 +38,14 @@ A pasta final será `dist/`.
 - Carrosséis pausam ao passar o mouse e respeitam `prefers-reduced-motion`.
 - Botão para consultar programação pelo WhatsApp.
 - Os cards usam wordmarks em texto e estilos próprios, sem depender de imagens externas.
+
+
+## V2.4
+
+- Removido o bloco informativo abaixo dos carrosséis.
+- “Rolagem automática” trocado por “STREAMINGS”.
+- Botões com salto suave, clique com ripple e pulso discreto.
+- Cards com elevação no hover.
+- Logo/mascote com entrada suave.
+- Seções aparecem suavemente conforme a rolagem.
+- Efeitos respeitam a preferência de movimento reduzido do dispositivo.

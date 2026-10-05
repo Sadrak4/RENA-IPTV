@@ -72,3 +72,45 @@ try {
 }
 
 console.log(`Atendimento WhatsApp: ${PHONE_RAW}`);
+
+
+// Interações visuais da V2.4
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+document.body.classList.add('reveal-ready');
+
+const revealItems = document.querySelectorAll('.reveal-item');
+if (!reduceMotion && 'IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+
+  revealItems.forEach((item) => observer.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add('is-visible'));
+}
+
+const primaryButtons = document.querySelectorAll('.btn-primary');
+primaryButtons.forEach((button, index) => {
+  if (index < 2) button.classList.add('attention-pulse');
+});
+
+const rippleTargets = document.querySelectorAll('.btn, .mini-btn, .mobile-cta-btn');
+rippleTargets.forEach((target) => {
+  target.addEventListener('pointerdown', (event) => {
+    if (reduceMotion) return;
+    const rect = target.getBoundingClientRect();
+    const dot = document.createElement('span');
+    dot.className = 'ripple-dot';
+    dot.style.left = `${event.clientX - rect.left}px`;
+    dot.style.top = `${event.clientY - rect.top}px`;
+    dot.style.width = dot.style.height = '18px';
+    target.appendChild(dot);
+    setTimeout(() => dot.remove(), 600);
+  });
+});
