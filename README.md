@@ -1,18 +1,19 @@
-# RENA IPTV — V2.1
+# RENA IPTV — V2.2
 
-Atualização visual mais limpa para GitHub + Vercel.
+Atualização focada em apresentar melhor o conteúdo, reduzir repetições e melhorar a conversão no mobile e no desktop.
 
-## Alterações principais
+## Novidades
 
-- removido o banner promocional grande do topo;
-- topo agora usa apenas a área da logo + mascote;
-- removida a seção repetitiva “Por que escolher”;
-- removidos os botões WhatsApp/Teste do cabeçalho;
-- navegação superior ficou mais limpa;
-- planos aparecem mais cedo na página;
-- mantido o teste de 12 horas em uma seção própria;
-- FAQ sem textos técnicos para clientes;
-- WhatsApp, renovação e suporte continuam disponíveis sem repetir demais.
+- seção “O que você encontra” com TV ao vivo, filmes, séries, esportes, infantil e documentários;
+- bloco exclusivo para futebol e programação esportiva;
+- botão “Consultar programação” com mensagem pronta no WhatsApp;
+- planos mais claros e o plano de 3 meses destacado com economia de R$ 15;
+- teste de 12 horas mantido em uma seção própria;
+- fluxo “Como contratar” reduzido para 3 passos;
+- dispositivos reduzidos aos principais: Smart TV, TV Box, celular e computador;
+- FAQ mais comercial;
+- menos textos repetidos;
+- topo mantendo somente a logo/mascote, sem banner de venda.
 
 ## Rodar localmente
 
@@ -20,12 +21,16 @@ Atualização visual mais limpa para GitHub + Vercel.
 npm run dev
 ```
 
-Abra `http://localhost:5173`.
-
 ## Build
 
 ```bash
 npm run build
 ```
 
-A pasta final será `dist/`.
+## WhatsApp
+
+Número configurado:
+
+```text
+(11) 96457-2959
+```

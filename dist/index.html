@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#090604" />
-  <meta name="description" content="RENA IPTV — planos, teste de 12 horas, compatibilidade e atendimento direto pelo WhatsApp." />
+  <meta name="description" content="RENA IPTV — planos, teste de 12 horas, programação, compatibilidade e atendimento direto pelo WhatsApp." />
   <meta property="og:title" content="RENA IPTV" />
-  <meta property="og:description" content="Planos, teste de 12 horas, renovação e atendimento rápido pelo WhatsApp." />
+  <meta property="og:description" content="Filmes, séries, TV ao vivo, esportes, teste de 12 horas e atendimento pelo WhatsApp." />
   <meta property="og:image" content="/public/rena-logo-mascote.jpg" />
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="stylesheet" href="/src/styles.css" />
@@ -25,11 +25,10 @@
     <nav class="nav" id="nav">
       <a href="#inicio">Início</a>
       <a href="#planos">Planos</a>
+      <a href="#conteudo">Conteúdo</a>
       <a href="#teste">Teste 12h</a>
-      <a href="#como-funciona">Como funciona</a>
       <a href="#dispositivos">Dispositivos</a>
       <a href="#faq">Dúvidas</a>
-      <a href="#suporte">Suporte</a>
     </nav>
 
     <button class="menu" id="menuBtn" aria-label="Abrir menu">☰</button>
@@ -39,30 +38,23 @@
     <section class="hero container" id="inicio">
       <div class="hero-copy">
         <span class="eyebrow">RENA IPTV</span>
-        <h1>Entretenimento em um só lugar, com atendimento direto e simples.</h1>
+        <h1>Filmes, séries, TV ao vivo e esportes em um só lugar.</h1>
         <p>
-          Escolha seu plano, veja os dispositivos compatíveis e fale com a equipe pelo WhatsApp.
-          Se preferir conhecer antes, solicite um <strong>teste de 12 horas</strong>.
+          Escolha seu plano, consulte a programação disponível e solicite um
+          <strong>teste de 12 horas</strong> antes de contratar.
         </p>
 
         <div class="hero-cta">
           <a class="btn btn-primary" href="#planos">Ver planos</a>
-          <a class="btn btn-outline" data-whatsapp="teste" target="_blank" rel="noreferrer">Solicitar teste de 12 horas</a>
+          <a class="btn btn-outline" data-whatsapp="teste" target="_blank" rel="noreferrer">Solicitar teste de 12h</a>
         </div>
 
-        <div class="hero-highlights compact">
-          <article>
-            <strong>R$ 25,00</strong>
-            <span>Plano mensal</span>
-          </article>
-          <article class="featured">
-            <strong>R$ 60,00</strong>
-            <span>Plano de 3 meses</span>
-          </article>
-          <article>
-            <strong>12 horas</strong>
-            <span>Teste disponível</span>
-          </article>
+        <div class="hero-chips" aria-label="Destaques">
+          <span>TV ao vivo</span>
+          <span>Filmes</span>
+          <span>Séries</span>
+          <span>Esportes</span>
+          <span>Infantil</span>
         </div>
       </div>
 
@@ -74,39 +66,39 @@
     <section class="section container" id="planos">
       <div class="section-heading center">
         <span class="eyebrow">PLANOS</span>
-        <h2>Escolha a opção ideal para você</h2>
-        <p>Ao clicar em contratar, o WhatsApp abre com a mensagem pronta.</p>
+        <h2>Escolha a opção ideal</h2>
+        <p>Ao clicar em contratar, o WhatsApp abre com a mensagem do plano já preenchida.</p>
       </div>
 
       <div class="plans-grid">
         <article class="plan-card">
           <div class="plan-head">
-            <h3>Plano Mensal</h3>
+            <h3>Mensal</h3>
             <span class="tag">1 mês</span>
           </div>
-          <p class="plan-copy">Uma opção simples para começar.</p>
           <div class="plan-price"><small>R$</small>25<sup>,00</sup></div>
+          <p class="plan-copy">Ideal para começar.</p>
           <ul class="plan-list">
-            <li>Atendimento via WhatsApp</li>
+            <li>Atendimento pelo WhatsApp</li>
             <li>Orientação de configuração</li>
-            <li>Compatibilidade com vários dispositivos</li>
+            <li>Consulta de compatibilidade</li>
           </ul>
           <button class="btn btn-primary full" data-plan="mensal">Assinar agora</button>
         </article>
 
         <article class="plan-card featured">
-          <div class="plan-badge">MAIS ESCOLHIDO</div>
+          <div class="plan-badge">MAIS VANTAJOSO</div>
           <div class="plan-head">
-            <h3>Plano Trimestral</h3>
+            <h3>Trimestral</h3>
             <span class="tag">3 meses</span>
           </div>
-          <p class="plan-copy">Mais tempo e melhor custo-benefício.</p>
+          <div class="old-price">De R$ 75,00</div>
           <div class="plan-price"><small>R$</small>60<sup>,00</sup></div>
-          <div class="plan-saving">Economize R$ 15 em relação a três mensalidades.</div>
+          <div class="plan-saving">Economize R$ 15</div>
           <ul class="plan-list">
-            <li>Atendimento via WhatsApp</li>
+            <li>Atendimento pelo WhatsApp</li>
             <li>Orientação de configuração</li>
-            <li>Melhor opção para quem quer mais tempo</li>
+            <li>Melhor custo-benefício</li>
           </ul>
           <button class="btn btn-primary full" data-plan="trimestral">Quero este plano</button>
         </article>
@@ -114,43 +106,113 @@
     </section>
 
     <section class="section container" id="teste">
-      <div class="test-card simplified">
+      <div class="test-card">
         <div>
           <span class="eyebrow">TESTE DE 12 HORAS</span>
-          <h2>Quer conhecer antes de contratar?</h2>
-          <p>Solicite seu teste pelo WhatsApp. A mensagem já abre pronta para envio.</p>
+          <h2>Quer conhecer antes de assinar?</h2>
+          <p>Solicite o teste pelo WhatsApp e receba as orientações para começar.</p>
         </div>
         <a class="btn btn-primary" data-whatsapp="teste" target="_blank" rel="noreferrer">Solicitar teste agora</a>
       </div>
     </section>
 
-    <section class="section dark container" id="como-funciona">
+    <section class="section container" id="conteudo">
       <div class="section-heading center">
-        <span class="eyebrow">COMO FUNCIONA</span>
-        <h2>Um passo a passo simples</h2>
+        <span class="eyebrow">O QUE VOCÊ ENCONTRA</span>
+        <h2>Conteúdo para diferentes momentos</h2>
+        <p>Consulte a disponibilidade atual da programação diretamente com a equipe.</p>
       </div>
 
-      <div class="steps-grid">
-        <article class="step-card"><b>01</b><h3>Escolha</h3><p>Veja os planos e selecione a opção que mais combina com você.</p></article>
-        <article class="step-card"><b>02</b><h3>Fale conosco</h3><p>O botão abre o WhatsApp com a mensagem pronta.</p></article>
-        <article class="step-card"><b>03</b><h3>Confirme</h3><p>Tire suas dúvidas e finalize os detalhes com o atendimento.</p></article>
-        <article class="step-card"><b>04</b><h3>Configure</h3><p>Receba as orientações para começar no seu dispositivo.</p></article>
+      <div class="content-grid">
+        <article class="content-card tv">
+          <div class="content-icon">📺</div>
+          <h3>TV ao vivo</h3>
+          <p>Canais abertos, entretenimento, notícias, filmes, variedades e documentários.</p>
+          <span class="content-note">Programação sujeita à disponibilidade</span>
+        </article>
+
+        <article class="content-card movies">
+          <div class="content-icon">🎬</div>
+          <h3>Filmes</h3>
+          <p>Ação, comédia, romance, terror, aventura, animação e muito mais.</p>
+          <span class="content-note">Catálogo amplo e variado</span>
+        </article>
+
+        <article class="content-card series">
+          <div class="content-icon">🍿</div>
+          <h3>Séries</h3>
+          <p>Drama, ação, suspense, comédia, produções populares e novidades.</p>
+          <span class="content-note">Consulte títulos disponíveis</span>
+        </article>
+
+        <article class="content-card sports">
+          <div class="content-icon">⚽</div>
+          <h3>Esportes</h3>
+          <p>Futebol, campeonatos nacionais, competições internacionais e programação esportiva.</p>
+          <a class="text-link" data-whatsapp="programacao" target="_blank" rel="noreferrer">Consultar programação →</a>
+        </article>
+
+        <article class="content-card kids">
+          <div class="content-icon">🧸</div>
+          <h3>Infantil</h3>
+          <p>Desenhos, animações e opções para toda a família.</p>
+          <span class="content-note">Conteúdo variado</span>
+        </article>
+
+        <article class="content-card docs">
+          <div class="content-icon">🌎</div>
+          <h3>Documentários</h3>
+          <p>Natureza, ciência, história, viagens, curiosidades e conhecimento.</p>
+          <span class="content-note">Para assistir quando quiser</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container sports-highlight" id="esportes">
+      <div class="sports-copy">
+        <span class="eyebrow">FUTEBOL E ESPORTES</span>
+        <h2>Quer saber o que está disponível para assistir?</h2>
+        <p>
+          Consulte a programação esportiva do momento pelo WhatsApp. Assim você confirma
+          os jogos e eventos disponíveis antes de assinar.
+        </p>
+        <a class="btn btn-primary" data-whatsapp="programacao" target="_blank" rel="noreferrer">Consultar programação esportiva</a>
+      </div>
+      <div class="sports-visual" aria-hidden="true">
+        <div class="stadium-icon">⚽</div>
+        <div class="sports-lines">
+          <span>Futebol nacional</span>
+          <span>Competições internacionais</span>
+          <span>Programação esportiva</span>
+        </div>
       </div>
     </section>
 
     <section class="section container" id="dispositivos">
       <div class="section-heading center">
         <span class="eyebrow">DISPOSITIVOS</span>
-        <h2>Assista no aparelho que for mais prático para você</h2>
-        <p>Compatibilidade sujeita ao dispositivo e aplicativo utilizado.</p>
+        <h2>Assista no aparelho mais prático para você</h2>
+        <p>Consulte a compatibilidade do seu aparelho antes da configuração.</p>
       </div>
 
-      <div class="devices-grid">
+      <div class="devices-grid four">
         <article class="device-item"><div>📺</div><b>Smart TV</b></article>
         <article class="device-item"><div>📦</div><b>TV Box</b></article>
         <article class="device-item"><div>📱</div><b>Celular</b></article>
         <article class="device-item"><div>💻</div><b>Computador</b></article>
-        <article class="device-item"><div>🎮</div><b>Console</b></article>
+      </div>
+    </section>
+
+    <section class="section dark container" id="como-funciona">
+      <div class="section-heading center">
+        <span class="eyebrow">COMO CONTRATAR</span>
+        <h2>Três passos e pronto</h2>
+      </div>
+
+      <div class="steps-grid three">
+        <article class="step-card"><b>01</b><h3>Escolha o plano</h3><p>Mensal ou trimestral.</p></article>
+        <article class="step-card"><b>02</b><h3>Chame no WhatsApp</h3><p>A mensagem já abre pronta.</p></article>
+        <article class="step-card"><b>03</b><h3>Receba as orientações</h3><p>A equipe explica como começar.</p></article>
       </div>
     </section>
 
@@ -163,23 +225,23 @@
       <div class="faq-list">
         <details open>
           <summary>Como faço para assinar?</summary>
-          <p>Escolha o plano desejado e clique no botão de contratação. O WhatsApp será aberto com a mensagem pronta.</p>
+          <p>Escolha o plano desejado e clique em “Assinar agora”. O WhatsApp será aberto com a mensagem pronta.</p>
         </details>
         <details>
           <summary>Como solicito o teste de 12 horas?</summary>
-          <p>Clique em “Solicitar teste” e envie a mensagem pronta no WhatsApp.</p>
+          <p>Clique em “Solicitar teste” e envie a mensagem pelo WhatsApp.</p>
         </details>
         <details>
-          <summary>Em quais aparelhos posso usar?</summary>
-          <p>Você pode consultar compatibilidade para Smart TV, TV Box, celular e computador. Em caso de dúvida, chame no WhatsApp.</p>
+          <summary>Como consulto a programação disponível?</summary>
+          <p>Use o botão “Consultar programação” para falar com a equipe e confirmar o que está disponível no momento.</p>
+        </details>
+        <details>
+          <summary>Quais aparelhos são compatíveis?</summary>
+          <p>Consulte compatibilidade para Smart TV, TV Box, celular e computador antes da configuração.</p>
         </details>
         <details>
           <summary>Como funciona a renovação?</summary>
-          <p>Na seção de suporte, clique em “Renovar agora” para abrir o atendimento com a mensagem pronta.</p>
-        </details>
-        <details>
-          <summary>Como falar com o suporte?</summary>
-          <p>Use o botão de WhatsApp na seção de suporte ou o botão fixo no celular.</p>
+          <p>Use o botão de renovação no final da página para abrir o atendimento com a mensagem pronta.</p>
         </details>
       </div>
     </section>
@@ -189,14 +251,14 @@
         <article class="support-card renew">
           <span class="eyebrow">RENOVAÇÃO</span>
           <h2>Já é cliente?</h2>
-          <p>Abra uma mensagem pronta para solicitar sua renovação.</p>
+          <p>Solicite a renovação pelo WhatsApp sem precisar procurar mensagens antigas.</p>
           <a class="btn btn-primary" data-whatsapp="renovar" target="_blank" rel="noreferrer">Renovar agora</a>
         </article>
 
         <article class="support-card help">
           <span class="eyebrow">SUPORTE</span>
-          <h2>Precisa falar com a equipe?</h2>
-          <p>Entre em contato pelo WhatsApp para atendimento e orientações.</p>
+          <h2>Precisa de ajuda?</h2>
+          <p>Fale diretamente com a equipe para dúvidas, compatibilidade ou configuração.</p>
           <a class="btn btn-outline" data-whatsapp="duvida" target="_blank" rel="noreferrer">Falar no WhatsApp</a>
         </article>
       </div>
@@ -206,8 +268,8 @@
       <div class="final-card compact-final">
         <div>
           <span class="eyebrow">RENA IPTV</span>
-          <h2>Pronto para começar?</h2>
-          <p id="selectedPlanText">Escolha um plano, solicite um teste ou fale diretamente com a equipe.</p>
+          <h2>Escolha seu plano ou solicite um teste.</h2>
+          <p id="selectedPlanText">Atendimento direto pelo WhatsApp.</p>
         </div>
         <a class="btn btn-white" id="finalWhatsApp" target="_blank" rel="noreferrer">WhatsApp • (11) 96457-2959</a>
       </div>
@@ -219,10 +281,11 @@
       <div>
         <div class="footer-brand">RENA <span>IPTV</span></div>
         <p>Atendimento pelo WhatsApp: <strong>(11) 96457-2959</strong></p>
+        <small>A disponibilidade de conteúdos e programação pode variar. Consulte antes de contratar.</small>
       </div>
       <div class="footer-links">
-        <a href="#inicio">Início</a>
         <a href="#planos">Planos</a>
+        <a href="#conteudo">Conteúdo</a>
         <a href="#teste">Teste 12h</a>
         <a href="#suporte">Suporte</a>
       </div>
@@ -232,7 +295,7 @@
 
   <a class="float-wa" data-whatsapp="duvida" target="_blank" rel="noreferrer" aria-label="Falar no WhatsApp">✆</a>
   <div class="mobile-sticky-cta">
-    <a class="mobile-cta-btn" data-whatsapp="duvida" target="_blank" rel="noreferrer">Falar no WhatsApp</a>
+    <a class="mobile-cta-btn" data-whatsapp="duvida" target="_blank" rel="noreferrer">WhatsApp</a>
     <a class="mobile-cta-btn secondary" data-whatsapp="teste" target="_blank" rel="noreferrer">Teste 12h</a>
   </div>
 
