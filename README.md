@@ -59,3 +59,9 @@ A pasta final será `dist/`.
 - No plano trimestral, cada tela extra soma R$ 15 ao total (R$ 5 × 3 meses).
 - O valor é atualizado automaticamente no card.
 - A mensagem do WhatsApp informa o plano, a quantidade de telas e o valor total.
+
+## V2.6
+- Destaque para **mais de 100 mil conteúdos** no site.
+- Nova seção de compatibilidade inspirada em painéis de dispositivos.
+- Compatibilidade exibida para Samsung, LG, Roku, Android TV, Fire TV, Apple TV, TV Box, MAG Box, Windows, iOS e Android.
+- Cards responsivos e interativos para desktop e celular.
