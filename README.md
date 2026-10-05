@@ -1,36 +1,53 @@
-# RENA IPTV — V1 sem banco de dados
+# RENA IPTV — V2
 
-Site estático, responsivo e sem dependências externas. Feito para subir no GitHub e publicar no Vercel.
+Versão 2 do site estático, pronta para GitHub + Vercel.
 
-## Rodar no PC
+## Melhorias da V2
+
+- visual mais premium e mais limpo;
+- botão e seção para **solicitar teste de 12 horas**;
+- FAQ sem textos técnicos para clientes;
+- seção de renovação e suporte mais claras;
+- hero com imagem em **contain**, evitando corte visível da arte;
+- barra fixa no mobile para WhatsApp e teste;
+- mensagens prontas diferentes para plano mensal, trimestral, teste, renovação e dúvidas.
+
+## Rodar localmente
 
 ```bash
 npm run dev
 ```
 
-Abra: `http://localhost:5173`
+Abra:
 
-## Gerar a pasta final
+```text
+http://localhost:5173
+```
+
+## Build
 
 ```bash
 npm run build
 ```
 
-Isso gera a pasta `dist/`.
+A pasta final será:
 
-## Vercel
+```text
+dist/
+```
 
-Você pode publicar o repositório diretamente. Se preferir build:
-- Build Command: `npm run build`
-- Output Directory: `dist`
+## Arquivos principais
 
-## Onde alterar
+- `index.html` — estrutura do site
+- `src/styles.css` — visual
+- `src/app.js` — links do WhatsApp e interações
+- `public/hero-poster.jpg` — arte usada no topo
+- `public/rena-brand.jpg` — imagem de apoio
 
-- WhatsApp: `src/app.js`
-- Planos: `index.html` e `src/app.js`
-- Logo/mascote do topo: `public/rena-brand.jpg`
-- Visual: `src/styles.css`
+## WhatsApp
 
-## Banco de dados
+Número atual configurado:
 
-Nenhum banco é usado. A última seleção de plano fica apenas no `localStorage` do navegador.
+```text
+(11) 96457-2959
+```

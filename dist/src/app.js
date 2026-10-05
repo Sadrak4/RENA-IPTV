@@ -1,47 +1,81 @@
-const PHONE = '5511964572959'
-const DISPLAY = '(11) 96457-2959'
-
-const plans = {
-  mensal: { label: 'Plano Mensal', period: '1 mês', price: 25 },
-  trimestral: { label: 'Plano Trimestral', period: '3 meses', price: 60 }
-}
-
-function wa(message) {
-  return `https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`
-}
+const PHONE_RAW = '(11) 96457-2959';
+const PHONE_LINK = '5511964572959';
+const STORAGE_KEY = 'rena:selectedAction';
 
 const messages = {
-  duvida: 'Olá! Vim pelo site da RENA IPTV e gostaria de saber mais sobre os planos.',
-  renovar: 'Olá! Já sou cliente da RENA IPTV e gostaria de renovar meu plano.'
+  mensal: 'Olá! Vim pelo site da RENA IPTV e tenho interesse no plano mensal de R$ 25,00.',
+  trimestral: 'Olá! Vim pelo site da RENA IPTV e tenho interesse no plano de 3 meses por R$ 60,00.',
+  teste: 'Olá! Vim pelo site da RENA IPTV e gostaria de solicitar um teste de 12 horas.',
+  renovar: 'Olá! Já sou cliente da RENA IPTV e gostaria de renovar meu plano.',
+  duvida: 'Olá! Vim pelo site da RENA IPTV e gostaria de tirar uma dúvida.',
+};
+
+const selectedPlanText = document.getElementById('selectedPlanText');
+const finalWhatsApp = document.getElementById('finalWhatsApp');
+const yearEl = document.getElementById('year');
+const menuBtn = document.getElementById('menuBtn');
+const nav = document.getElementById('nav');
+
+const setFinalCta = (type = 'duvida') => {
+  let text = 'Escolha um plano, solicite um teste ou fale diretamente com a equipe.';
+
+  if (type === 'mensal') text = 'Plano mensal selecionado. Fale no WhatsApp para continuar.';
+  if (type === 'trimestral') text = 'Plano trimestral selecionado. Fale no WhatsApp para continuar.';
+  if (type === 'teste') text = 'Solicitação de teste de 12 horas pronta para envio.';
+  if (type === 'renovar') text = 'Renovação pronta para ser solicitada pelo WhatsApp.';
+
+  if (selectedPlanText) selectedPlanText.textContent = text;
+  if (finalWhatsApp) {
+    finalWhatsApp.href = buildWhatsAppUrl(type);
+  }
+
+  try {
+    localStorage.setItem(STORAGE_KEY, type);
+  } catch (error) {
+    // ignore storage issues
+  }
+};
+
+const buildWhatsAppUrl = (type) => {
+  const message = messages[type] || messages.duvida;
+  return `https://wa.me/${PHONE_LINK}?text=${encodeURIComponent(message)}`;
+};
+
+const bindWhatsAppLinks = () => {
+  document.querySelectorAll('[data-whatsapp]').forEach((el) => {
+    const type = el.dataset.whatsapp || 'duvida';
+    el.href = buildWhatsAppUrl(type);
+    el.addEventListener('click', () => setFinalCta(type));
+  });
+
+  document.querySelectorAll('[data-plan]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const type = button.dataset.plan;
+      setFinalCta(type);
+      window.open(buildWhatsAppUrl(type), '_blank', 'noopener,noreferrer');
+    });
+  });
+};
+
+if (menuBtn && nav) {
+  menuBtn.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
+
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => nav.classList.remove('open'));
+  });
 }
 
-document.querySelectorAll('[data-whatsapp]').forEach(el => {
-  const key = el.dataset.whatsapp
-  el.href = wa(messages[key] || messages.duvida)
-})
+bindWhatsAppLinks();
 
-document.querySelectorAll('[data-plan]').forEach(button => {
-  button.addEventListener('click', () => {
-    const plan = plans[button.dataset.plan]
-    localStorage.setItem('rena:selected-plan', button.dataset.plan)
-    window.open(wa(`Olá! Vim pelo site da RENA IPTV e quero assinar o ${plan.label} (${plan.period}) por R$ ${plan.price},00.`), '_blank', 'noopener,noreferrer')
-  })
-})
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-const lastPlanKey = localStorage.getItem('rena:selected-plan')
-const lastPlan = plans[lastPlanKey]
-const selectedText = document.getElementById('selectedPlanText')
-const finalButton = document.getElementById('finalWhatsApp')
-if (lastPlan) {
-  selectedText.textContent = `Última opção escolhida: ${lastPlan.label} — R$ ${lastPlan.price},00.`
-  finalButton.href = wa(`Olá! Vim pelo site da RENA IPTV e quero assinar o ${lastPlan.label} (${lastPlan.period}) por R$ ${lastPlan.price},00.`)
-} else {
-  finalButton.href = wa(messages.duvida)
+try {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  setFinalCta(saved || 'duvida');
+} catch (error) {
+  setFinalCta('duvida');
 }
 
-const menuBtn = document.getElementById('menuBtn')
-const nav = document.getElementById('nav')
-menuBtn.addEventListener('click', () => nav.classList.toggle('open'))
-nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')))
-
-document.getElementById('year').textContent = new Date().getFullYear()
+console.log(`Atendimento WhatsApp: ${PHONE_RAW}`);

@@ -1,11 +1,10 @@
 {
-  "name": "rena-iptv-site",
-  "version": "1.0.0",
+  "name": "rena-iptv-site-v2",
   "private": true,
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
     "dev": "node server.mjs",
-    "build": "node build.mjs",
-    "preview": "node server.mjs dist"
+    "build": "node build.mjs"
   }
 }
